@@ -1,7 +1,5 @@
 package com.ldeshpande.service;
 
-import com.ldeshpande.exception.InvalidInputException;
-
 import java.util.Objects;
 
 public class CheeseService {
@@ -12,6 +10,8 @@ public class CheeseService {
             return 0;
         } else if (cheeseBlocks.length == 1) {
             return cheeseBlocks[0];
+        } else if (cheeseBlocks.length == 2) {
+            return Math.max(cheeseBlocks[0], cheeseBlocks[1]);
         }
 
         return calculateMaximumCheese(cheeseBlocks);
@@ -33,7 +33,7 @@ public class CheeseService {
 
     private void validateArray(int[] array) {
         if (Objects.isNull(array)) {
-            throw new InvalidInputException("Invalid input has been provided");
+            throw new IllegalArgumentException();
         }
     }
 }
