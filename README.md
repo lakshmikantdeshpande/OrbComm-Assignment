@@ -37,5 +37,5 @@ Print an integer which denotes the maximum amount of cheese that the mouse can h
 
 #### Output:
 
-113
+113  
 4
